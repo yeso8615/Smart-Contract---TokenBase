@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.4 < 0.7.0;
+pragma solidity >=0.5.0 < 0.8.16;
 pragma experimental ABIEncoderV2;
-import "./SafeMath.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
 
 //interface de token ERC20
 interface IERC20{
@@ -46,15 +46,10 @@ contract ERC20Basic is IERC20{
     mapping (address => mapping (address =>uint)) allowed;
     uint256 totalSupply_;
 
-    constructor (uint256 initialSupply) public{
+    constructor (uint256 initialSupply) {
         totalSupply_ = initialSupply;
         balances[msg.sender] = totalSupply_;
     }
-
-
-    event Transfer(address indexed from, address indexed to, uint256 tokens);
-    event Approval(address indexed owner, address indexed spender, uint256 tokens);
-
 
     using SafeMath for uint256;
 
