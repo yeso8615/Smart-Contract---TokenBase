@@ -38,8 +38,8 @@ interface IERC20{
 contract ERC20Basic is IERC20{
 
     //cambiar datos por el token real
-    string public constant name = "MOONTANKWAR";
-    string public constant symbol = "MTW";
+    string public constant name = "YESO";
+    string public constant symbol = "Y";
     uint8 public constant decimals = 18;
 
     mapping (address => uint) balances;
